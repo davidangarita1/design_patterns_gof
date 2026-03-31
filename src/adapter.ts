@@ -100,7 +100,7 @@ audioPlayer.play("unsupported.wav");
 // PRINCIPIOS SOLID EN ESTE PATRÓN
 // =============================================================================
 //
-// ✅  PRINCIPIOS QUE USA:
+// [CHECK] PRINCIPIOS QUE USA:
 //   - S (Single Responsibility): MediaAdapter tiene una sola responsabilidad:
 //     traducir llamadas de la interfaz MediaPlayer a AdvancedMediaPlayer.
 //   - O (Open/Closed): Se pueden agregar nuevos adaptadores (ej. AviAdapter)
@@ -110,7 +110,7 @@ audioPlayer.play("unsupported.wav");
 //   - L (Liskov Substitution): MediaAdapter implementa MediaPlayer y puede
 //     sustituir a cualquier otro MediaPlayer sin romper el comportamiento.
 //
-// ⚠️  PRINCIPIOS QUE VIOLA U OMITE:
+// [WARNING] PRINCIPIOS QUE VIOLA U OMITE:
 //   - I (Interface Segregation): AdvancedMediaPlayer obliga a Mp4Player a
 //     implementar playVlc() y a VlcPlayer a implementar playMp4(), aunque
 //     no los soporten. Lo correcto sería segregar en interfaces específicas.

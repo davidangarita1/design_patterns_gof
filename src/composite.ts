@@ -104,7 +104,7 @@ console.log(`Total size of Photos: ${photos.getSize()} KB`);
 // PRINCIPIOS SOLID EN ESTE PATRÓN
 // =============================================================================
 //
-// ✅  PRINCIPIOS QUE USA:
+// [CHECK] PRINCIPIOS QUE USA:
 //   - O (Open/Closed): Nuevos tipos de componentes (ej. SymbolicLink) se agregan
 //     implementando la interfaz sin modificar Directory ni el cliente.
 //   - L (Liskov Substitution): File y Directory son intercambiables como
@@ -112,7 +112,7 @@ console.log(`Total size of Photos: ${photos.getSize()} KB`);
 //   - D (Dependency Inversion): El cliente depende de FileSystemComponent
 //     (interfaz), no de File ni Directory directamente.
 //
-// ⚠️  PRINCIPIOS QUE VIOLA U OMITE:
+// [WARNING] PRINCIPIOS QUE VIOLA U OMITE:
 //   - I (Interface Segregation): Si se agregan métodos add()/remove() a la
 //     interfaz FileSystemComponent, File se ve forzado a implementar operaciones
 //     de composición que no tiene sentido para una hoja.

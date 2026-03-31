@@ -146,7 +146,7 @@ homeTheater.endMovie();
 // PRINCIPIOS SOLID EN ESTE PATRÓN
 // =============================================================================
 //
-// ✅  PRINCIPIOS QUE USA:
+// [CHECK] PRINCIPIOS QUE USA:
 //   - S (Single Responsibility): La fachada centraliza y simplifica el acceso
 //     al subsistema, su única responsabilidad es exponer operaciones de alto nivel.
 //   - D (Dependency Inversion): El cliente depende de HomeTheaterFacade, no
@@ -154,7 +154,7 @@ homeTheater.endMovie();
 //   - O (Open/Closed): Se pueden agregar nuevos métodos de alto nivel a la
 //     fachada (ej. streamMovie) sin cambiar los subsistemas.
 //
-// ⚠️  PRINCIPIOS QUE VIOLA U OMITE:
+// [WARNING] PRINCIPIOS QUE VIOLA U OMITE:
 //   - D (Dependency Inversion): La fachada depende de clases concretas de
 //     subsistema, no de interfaces. Si se cambia DVDPlayer, hay que modificar
 //     la fachada. Lo ideal sería inyectar interfaces abstractas.

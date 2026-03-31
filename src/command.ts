@@ -152,7 +152,7 @@ remote.macro(macroCommands);
 // PRINCIPIOS SOLID EN ESTE PATRÓN
 // =============================================================================
 //
-// ✅  PRINCIPIOS QUE USA:
+// [CHECK] PRINCIPIOS QUE USA:
 //   - O (Open/Closed): Nuevos comandos (ej. DimLightCommand) se agregan sin
 //     modificar RemoteControl ni las clases receptor existentes.
 //   - S (Single Responsibility): Cada comando encapsula una única acción;
@@ -162,7 +162,7 @@ remote.macro(macroCommands);
 //   - L (Liskov Substitution): Todos los comandos son intercambiables al
 //     implementar la interfaz Command con execute() y undo().
 //
-// ⚠️  PRINCIPIOS QUE VIOLA U OMITE:
+// [WARNING] PRINCIPIOS QUE VIOLA U OMITE:
 //   - I (Interface Segregation): La interfaz Command incluye undo() pero no
 //     todos los comandos necesariamente soportan deshacer (ej. un comando
 //     de envío de email). Fuerza implementaciones vacías o falsas.

@@ -68,17 +68,17 @@ class StoppedState implements State {
   }
 
   pause(player: MediaPlayer): void {
-    console.log("⚠️  Cannot pause. Media is stopped.");
+    console.log("[WARNING] Cannot pause. Media is stopped.");
   }
 
   stop(player: MediaPlayer): void {
-    console.log("⚠️  Already stopped.");
+    console.log("[WARNING] Already stopped.");
   }
 }
 
 class PlayingState implements State {
   play(player: MediaPlayer): void {
-    console.log("⚠️  Already playing.");
+    console.log("[WARNING] Already playing.");
   }
 
   pause(player: MediaPlayer): void {
@@ -103,7 +103,7 @@ class PausedState implements State {
   }
 
   pause(player: MediaPlayer): void {
-    console.log("⚠️  Already paused.");
+    console.log("[WARNING] Already paused.");
   }
 
   stop(player: MediaPlayer): void {
@@ -150,7 +150,7 @@ player.pause();
 // PRINCIPIOS SOLID EN ESTE PATRÓN
 // =============================================================================
 //
-// ✅  PRINCIPIOS QUE USA:
+// [CHECK] PRINCIPIOS QUE USA:
 //   - O (Open/Closed): Nuevos estados (ej. BufferingState) se agregan creando
 //     una nueva clase que implementa State, sin modificar el contexto ni los
 //     estados existentes.
@@ -162,7 +162,7 @@ player.pause();
 //   - L (Liskov Substitution): Cualquier estado concreto puede sustituir a otro
 //     en el contexto porque todos implementan la misma interfaz State.
 //
-// ⚠️  PRINCIPIOS QUE VIOLA U OMITE:
+// [WARNING] PRINCIPIOS QUE VIOLA U OMITE:
 //   - I (Interface Segregation): La interfaz State obliga a implementar play(),
 //     pause() y stop() aunque un estado particular no soporte alguna de esas
 //     transiciones de forma significativa (retornan mensajes de advertencia).

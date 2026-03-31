@@ -115,7 +115,7 @@ luxuryHouse.displayInfo();
 // PRINCIPIOS SOLID EN ESTE PATRÓN
 // =============================================================================
 //
-// ✅  PRINCIPIOS QUE USA:
+// [CHECK] PRINCIPIOS QUE USA:
 //   - S (Single Responsibility): HousePlan solo representa los datos de la casa;
 //     HouseBuilder solo se encarga de la construcción paso a paso.
 //   - O (Open/Closed): Se pueden crear nuevos builders para diferentes tipos de
@@ -123,7 +123,7 @@ luxuryHouse.displayInfo();
 //   - D (Dependency Inversion): Un Director (si existiera) dependeria de la
 //     interfaz abstracta Builder, no de tipos concretos.
 //
-// ⚠️  PRINCIPIOS QUE VIOLA U OMITE:
+// [WARNING] PRINCIPIOS QUE VIOLA U OMITE:
 //   - O (Open/Closed): Agregar una nueva propiedad a HousePlan puede requerir
 //     modificar el Builder para exponer ese paso de construcción.
 //   - I (Interface Segregation): Si multiples builders implementan la misma

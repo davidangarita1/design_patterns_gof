@@ -138,7 +138,7 @@ while (reverseIter.hasNext()) {
 // PRINCIPIOS SOLID EN ESTE PATRÓN
 // =============================================================================
 //
-// ✅  PRINCIPIOS QUE USA:
+// [CHECK] PRINCIPIOS QUE USA:
 //   - S (Single Responsibility): La lógica de iteración está en BookIterator,
 //     completamente separada de BookCollection que solo gestiona los datos.
 //   - O (Open/Closed): Nuevos iteradores (ReverseBookIterator, FilterIterator)
@@ -148,7 +148,7 @@ while (reverseIter.hasNext()) {
 //   - D (Dependency Inversion): El cliente depende de la interfaz Iterator<T>,
 //     no de BookIterator ni ReverseBookIterator directamente.
 //
-// ⚠️  PRINCIPIOS QUE VIOLA U OMITE:
+// [WARNING] PRINCIPIOS QUE VIOLA U OMITE:
 //   - I (Interface Segregation): La interfaz Iterator<T> incluye tanto hasNext()
 //     como next(). Para iteradores de solo lectura o infinitos, algunos métodos
 //     pueden no tener un significado natural (ej. hasNext() en un stream infinito).

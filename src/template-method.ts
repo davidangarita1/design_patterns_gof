@@ -108,7 +108,7 @@ abstract class DataProcessor {
   }
 
   protected validateData(data: string[]): void {
-    console.log("✓ Validating data");
+    console.log("[OK] Validating data");
   }
 
   protected abstract transformData(data: string[]): void;
@@ -183,7 +183,7 @@ jsonProcessor.processData(["user1", "user2"]);
 // PRINCIPIOS SOLID EN ESTE PATRÓN
 // =============================================================================
 //
-// ✅  PRINCIPIOS QUE USA:
+// [CHECK] PRINCIPIOS QUE USA:
 //   - O (Open/Closed): Nuevas implementaciones del algoritmo (ej. XMLProcessor)
 //     se agregan subclasificando sin modificar la estructura del template method.
 //   - L (Liskov Substitution): Subclases como CSVProcessor y JSONProcessor pueden
@@ -191,7 +191,7 @@ jsonProcessor.processData(["user1", "user2"]);
 //   - S (Single Responsibility): La clase abstracta define el esqueleto del
 //     algoritmo; cada subclase define solo sus pasos específicos.
 //
-// ⚠️  PRINCIPIOS QUE VIOLA U OMITE:
+// [WARNING] PRINCIPIOS QUE VIOLA U OMITE:
 //   - D (Dependency Inversion): Las subclases dependen directamente de la clase
 //     abstracta (herencia concreta), no de una interfaz. Si el template method
 //     cambia, todas las subclases se ven afectadas.

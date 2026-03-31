@@ -80,7 +80,7 @@ console.log("Air:", airLogistics.planDelivery());
 // PRINCIPIOS SOLID EN ESTE PATRÓN
 // =============================================================================
 //
-// ✅  PRINCIPIOS QUE USA:
+// [CHECK] PRINCIPIOS QUE USA:
 //   - O (Open/Closed): Se pueden agregar nuevos tipos de transporte (ej. Drone)
 //     creando una nueva subclase sin modificar ningún código existente.
 //   - L (Liskov Substitution): Cualquier subclase de Logistics puede sustituir
@@ -88,7 +88,7 @@ console.log("Air:", airLogistics.planDelivery());
 //   - D (Dependency Inversion): El cliente trabaja contra la interfaz Transport
 //     y la clase abstracta Logistics, no contra implementaciones concretas.
 //
-// ⚠️  PRINCIPIOS QUE VIOLA U OMITE:
+// [WARNING] PRINCIPIOS QUE VIOLA U OMITE:
 //   - S (Single Responsibility): La clase abstracta Logistics mezcla la lógica
 //     de negocio (planDelivery) con la responsabilidad de creación de objetos.
 //   - I (Interface Segregation): Si la interfaz Transport crece con métodos

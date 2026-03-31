@@ -111,15 +111,15 @@ class PerimeterCalculator implements Visitor {
 
 class ShapeRenderer implements Visitor {
   visitCircle(circle: VisitorCircle): void {
-    console.log(`🔵 Drawing circle with radius ${circle.radius}`);
+    console.log(`[CIRCLE] Drawing circle with radius ${circle.radius}`);
   }
 
   visitRectangle(rectangle: VisitorRectangle): void {
-    console.log(`▭ Drawing rectangle ${rectangle.width}x${rectangle.height}`);
+    console.log(`[RECTANGLE] Drawing rectangle ${rectangle.width}x${rectangle.height}`);
   }
 
   visitTriangle(triangle: VisitorTriangle): void {
-    console.log(`△ Drawing triangle with sides ${triangle.side1}, ${triangle.side2}, ${triangle.side3}`);
+    console.log(`[TRIANGLE] Drawing triangle with sides ${triangle.side1}, ${triangle.side2}, ${triangle.side3}`);
   }
 }
 
@@ -162,7 +162,7 @@ shapes.accept(renderer);
 // PRINCIPIOS SOLID EN ESTE PATRÓN
 // =============================================================================
 //
-// ✅  PRINCIPIOS QUE USA:
+// [CHECK] PRINCIPIOS QUE USA:
 //   - O (Open/Closed): Nuevas operaciones (ej. SerializerVisitor, ExporterVisitor)
 //     se agregan creando un nuevo Visitor sin modificar Circle, Rectangle
 //     ni Triangle.
@@ -172,7 +172,7 @@ shapes.accept(renderer);
 //   - D (Dependency Inversion): Los elementos dependen de la interfaz Visitor;
 //     los visitantes dependen de la interfaz Element.
 //
-// ⚠️  PRINCIPIOS QUE VIOLA U OMITE:
+// [WARNING] PRINCIPIOS QUE VIOLA U OMITE:
 //   - O (Open/Closed): Agregar un NUEVO TIPO de elemento (ej. Pentagon) rompe
 //     el OCP porque obliga a modificar TODOS los visitantes existentes para
 //     añadir visitPentagon(). Es la mayor debilidad del patrón.

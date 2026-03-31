@@ -31,7 +31,7 @@ abstract class LeaveApprover {
 
   handleRequest(request: LeaveRequest): void {
     if (this.canApprove(request.leaveDays)) {
-      console.log(`✓ ${this.getApproverName()} approves ${request.leaveDays} days for ${request.employeeName}`);
+      console.log(`[OK] ${this.getApproverName()} approves ${request.leaveDays} days for ${request.employeeName}`);
     } else if (this.nextApprover !== null) {
       console.log(`→ ${this.getApproverName()} delegates to next approver`);
       this.nextApprover.handleRequest(request);
@@ -116,7 +116,7 @@ manager.handleRequest(request4);
 // PRINCIPIOS SOLID EN ESTE PATRÓN
 // =============================================================================
 //
-// ✅  PRINCIPIOS QUE USA:
+// [CHECK] PRINCIPIOS QUE USA:
 //   - O (Open/Closed): Nuevos aprobadores (ej. Board) se agregan creando una
 //     nueva subclase y enlazándola, sin modificar la cadena existente.
 //   - L (Liskov Substitution): Cada manejador concreto puede sustituir a
@@ -126,7 +126,7 @@ manager.handleRequest(request4);
 //   - S (Single Responsibility): Cada manejador decide solo si puede aprobar
 //     la solicitud según su propio umbral.
 //
-// ⚠️  PRINCIPIOS QUE VIOLA U OMITE:
+// [WARNING] PRINCIPIOS QUE VIOLA U OMITE:
 //   - S (Single Responsibility): LeaveApprover mezcla la lógica de delegación
 //     en cadena (handleRequest) con la lógica de aprobación (canApprove),
 //     generando dos razones de cambio en la misma clase.

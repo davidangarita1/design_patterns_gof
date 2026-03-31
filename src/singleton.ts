@@ -48,7 +48,7 @@ console.log("\nAre they the same instance?", db1 === db2); // true
 // PRINCIPIOS SOLID EN ESTE PATRÓN
 // =============================================================================
 //
-// ⚠️  PRINCIPIOS QUE VIOLA:
+// [WARNING] PRINCIPIOS QUE VIOLA:
 //   - S (Single Responsibility): El Singleton suele convertirse en un "God Object"
 //     con múltiples responsabilidades al ser el único punto de acceso global.
 //   - O (Open/Closed): El constructor privado impide la herencia normal, haciendo
@@ -58,7 +58,7 @@ console.log("\nAre they the same instance?", db1 === db2); // true
 //   - L (Liskov Substitution): No puede ser sustituido por subclases de forma
 //     segura debido al constructor privado y al estado global compartido.
 //
-// ✅  PRINCIPIOS QUE RESPETA (parcialmente):
+// [CHECK] PRINCIPIOS QUE RESPETA (parcialmente):
 //   - S: Si se diseña con cuidado, la clase Singleton puede tener una sola
 //     responsabilidad bien definida (ej. solo gestionar la conexión a BD).
 //

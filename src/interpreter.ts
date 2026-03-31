@@ -146,7 +146,7 @@ try {
 // PRINCIPIOS SOLID EN ESTE PATRÓN
 // =============================================================================
 //
-// ✅  PRINCIPIOS QUE USA:
+// [CHECK] PRINCIPIOS QUE USA:
 //   - O (Open/Closed): Nuevas operaciones (ej. ModuloExpression, PowerExpression)
 //     se agregan implementando la interfaz Expression sin modificar las existentes.
 //   - L (Liskov Substitution): Todas las expresiones son sustituibles entre sí
@@ -154,7 +154,7 @@ try {
 //   - D (Dependency Inversion): Las expresiones compuestas dependen de la interfaz
 //     Expression, no de NumberExpression ni otras concretas.
 //
-// ⚠️  PRINCIPIOS QUE VIOLA U OMITE:
+// [WARNING] PRINCIPIOS QUE VIOLA U OMITE:
 //   - S (Single Responsibility): Las clases de expresión mezclan la estructura
 //     gramátical (qué operandos tiene) con la lógica de interpretación (cómo
 //     se evalúa). Idealmente se separarían en nodos y visitantes.

@@ -63,7 +63,7 @@ class ChatRoom implements ChatMediator {
 
   registerUser(user: User): void {
     this.users.push(user);
-    console.log(`✓ ${user.getName()} joined the chat`);
+    console.log(`[OK] ${user.getName()} joined the chat`);
   }
 
   showMessage(sender: User, message: string): void {
@@ -116,7 +116,7 @@ user3.send("Thanks for the update!");
 // PRINCIPIOS SOLID EN ESTE PATRÓN
 // =============================================================================
 //
-// ✅  PRINCIPIOS QUE USA:
+// [CHECK] PRINCIPIOS QUE USA:
 //   - D (Dependency Inversion): Todos los usuarios dependen de la interfaz
 //     ChatMediator, no de ChatRoom directamente. El acoplamiento es hacia
 //     la abstracción.
@@ -125,7 +125,7 @@ user3.send("Thanks for the update!");
 //   - O (Open/Closed): Nuevos tipos de usuario (AdminUser, BotUser) se agregan
 //     sin modificar ChatRoom ni los usuarios existentes.
 //
-// ⚠️  PRINCIPIOS QUE VIOLA U OMITE:
+// [WARNING] PRINCIPIOS QUE VIOLA U OMITE:
 //   - S (Single Responsibility): ChatRoom puede convertirse en un "God Object"
 //     al centralizar TODA la lógica de comunicación. Si crece con filtros,
 //     roles, y logs, tendrá múltiples razones de cambio.

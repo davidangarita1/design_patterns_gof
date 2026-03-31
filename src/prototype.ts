@@ -93,7 +93,7 @@ console.log("\nOriginal Document (still unchanged):\n", originalDoc.display());
 // PRINCIPIOS SOLID EN ESTE PATRÓN
 // =============================================================================
 //
-// ✅  PRINCIPIOS QUE USA:
+// [CHECK] PRINCIPIOS QUE USA:
 //   - O (Open/Closed): Nuevos prototipos se añaden instanciando objetos sin
 //     modificar código existente. El cliente clona sin conocer la clase concreta.
 //   - L (Liskov Substitution): Los clones son instancias equivalentes del mismo
@@ -101,7 +101,7 @@ console.log("\nOriginal Document (still unchanged):\n", originalDoc.display());
 //   - D (Dependency Inversion): El cliente trabaja contra la interfaz genérica
 //     Prototype<T>, no contra las clases Shape o Document directamente.
 //
-// ⚠️  PRINCIPIOS QUE VIOLA U OMITE:
+// [WARNING] PRINCIPIOS QUE VIOLA U OMITE:
 //   - S (Single Responsibility): La clase agrega la responsabilidad de clonarse
 //     a sí misma, además de su responsabilidad principal de negocio.
 //   - D (Dependency Inversion): Para clonar, el cliente aún debe invocar el método

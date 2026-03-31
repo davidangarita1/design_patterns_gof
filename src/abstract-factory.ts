@@ -101,7 +101,7 @@ app.render();
 // PRINCIPIOS SOLID EN ESTE PATRÓN
 // =============================================================================
 //
-// ✅  PRINCIPIOS QUE USA:
+// [CHECK] PRINCIPIOS QUE USA:
 //   - O (Open/Closed): Se pueden agregar nuevas familias (ej. LinuxFactory) sin
 //     modificar el código cliente ni las famílias existentes.
 //   - D (Dependency Inversion): ApplicationUI depende de GUIFactory (interfaz),
@@ -111,7 +111,7 @@ app.render();
 //   - L (Liskov Substitution): WindowsFactory y MacFactory son intercambiables
 //     entre sí al implementar la misma interfaz GUIFactory.
 //
-// ⚠️  PRINCIPIOS QUE VIOLA U OMITE:
+// [WARNING] PRINCIPIOS QUE VIOLA U OMITE:
 //   - O (Open/Closed): Agregar un NUEVO TIPO de producto (ej. TextField) obliga
 //     a modificar la interfaz GUIFactory Y todas las fábricas concretas existentes.
 //   - S (Single Responsibility): Cada fábrica concreta tiene el conocimiento

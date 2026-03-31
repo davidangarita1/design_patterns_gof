@@ -114,7 +114,7 @@ console.log(`${anotherPizza.getDescription()}: $${anotherPizza.getPrice()}`);
 // PRINCIPIOS SOLID EN ESTE PATRÓN
 // =============================================================================
 //
-// ✅  PRINCIPIOS QUE USA:
+// [CHECK] PRINCIPIOS QUE USA:
 //   - O (Open/Closed): Nuevas características se agregan añadiendo un nuevo
 //     decorador sin modificar Pizza ni los decoradores existentes.
 //   - S (Single Responsibility): Cada decorador (CheeseDecorator, BaconDecorator)
@@ -124,7 +124,7 @@ console.log(`${anotherPizza.getDescription()}: $${anotherPizza.getPrice()}`);
 //   - D (Dependency Inversion): PizzaDecorator depende de la interfaz Component,
 //     no de la clase concreta Pizza.
 //
-// ⚠️  PRINCIPIOS QUE VIOLA U OMITE:
+// [WARNING] PRINCIPIOS QUE VIOLA U OMITE:
 //   - I (Interface Segregation): La clase abstracta PizzaDecorator obliga a
 //     implementar getDescription() aunque el decorador podría solo modificar
 //     el precio (y viceversa), forzando implementaciones triviales.

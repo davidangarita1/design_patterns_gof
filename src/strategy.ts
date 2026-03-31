@@ -26,9 +26,9 @@ class CreditCardPayment implements PaymentStrategy {
   }
 
   pay(amount: number): void {
-    console.log(`💳 Processing credit card payment of $${amount}`);
+    console.log(`[CARD] Processing credit card payment of $${amount}`);
     console.log(`Card: ****-****-****-${this.cardNumber.slice(-4)}`);
-    console.log("✓ Payment authorized");
+    console.log("[OK] Payment authorized");
   }
 
   getPaymentMethod(): string {
@@ -44,9 +44,9 @@ class PayPalPayment implements PaymentStrategy {
   }
 
   pay(amount: number): void {
-    console.log(`🅿️  Processing PayPal payment of $${amount}`);
+    console.log(`[PAYPAL] Processing PayPal payment of $${amount}`);
     console.log(`Account: ${this.email}`);
-    console.log("✓ Payment authorized");
+    console.log("[OK] Payment authorized");
   }
 
   getPaymentMethod(): string {
@@ -62,9 +62,9 @@ class CryptoCurrencyPayment implements PaymentStrategy {
   }
 
   pay(amount: number): void {
-    console.log(`₿ Processing cryptocurrency payment of $${amount}`);
+    console.log(`[BITCOIN] Processing cryptocurrency payment of $${amount}`);
     console.log(`Wallet: ${this.walletAddress.slice(0, 10)}...`);
-    console.log("✓ Transaction confirmed on blockchain");
+    console.log("[OK] Transaction confirmed on blockchain");
   }
 
   getPaymentMethod(): string {
@@ -80,9 +80,9 @@ class BankTransferPayment implements PaymentStrategy {
   }
 
   pay(amount: number): void {
-    console.log(`🏦 Processing bank transfer of $${amount}`);
+    console.log(`[BANK] Processing bank transfer of $${amount}`);
     console.log(`Account: ****${this.accountNumber.slice(-4)}`);
-    console.log("✓ Transfer initiated");
+    console.log("[OK] Transfer initiated");
   }
 
   getPaymentMethod(): string {
@@ -110,7 +110,7 @@ class ShoppingCart {
 
   checkout(): void {
     if (!this.paymentStrategy) {
-      console.log("❌ No payment strategy selected");
+      console.log("[ERROR] No payment strategy selected");
       return;
     }
 
@@ -157,7 +157,7 @@ cart3.checkout();
 // PRINCIPIOS SOLID EN ESTE PATRÓN
 // =============================================================================
 //
-// ✅  PRINCIPIOS QUE USA:
+// [CHECK] PRINCIPIOS QUE USA:
 //   - O (Open/Closed): Nuevas estrategias (ej. ApplePayPayment) se agregan
 //     sin modificar ShoppingCart ni las estrategias existentes.
 //   - S (Single Responsibility): Cada estrategia de pago tiene una sola
@@ -167,7 +167,7 @@ cart3.checkout();
 //   - L (Liskov Substitution): Todas las estrategias son intercambiables al
 //     implementar PaymentStrategy; el cliente no nota la diferencia.
 //
-// ⚠️  PRINCIPIOS QUE VIOLA U OMITE:
+// [WARNING] PRINCIPIOS QUE VIOLA U OMITE:
 //   - I (Interface Segregation): Si PaymentStrategy crece con métodos como
 //     refund() o validateCard(), estrategias simples (ej. CashPayment) deben
 //     implementar métodos irrelevantes para ellas.

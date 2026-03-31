@@ -124,14 +124,14 @@ console.log("\nMemory optimized: Many trees share the same TreeType instances");
 // PRINCIPIOS SOLID EN ESTE PATRÓN
 // =============================================================================
 //
-// ✅  PRINCIPIOS QUE USA:
+// [CHECK] PRINCIPIOS QUE USA:
 //   - S (Single Responsibility): TreeType gestiona solo el estado intrínseco
 //     compartido; Tree gestion el estado extrínseco (posición); TreeFactory
 //     gestiona el caché. Cada clase tiene una responsabilidad clara.
 //   - O (Open/Closed): Nuevos tipos de árboles se añaden sin modificar
 //     la lógica de Forest ni de TreeFactory.
 //
-// ⚠️  PRINCIPIOS QUE VIOLA U OMITE:
+// [WARNING] PRINCIPIOS QUE VIOLA U OMITE:
 //   - D (Dependency Inversion): Forest y Tree dependen directamente de TreeType
 //     (clase concreta), no de una interfaz o abstracción.
 //   - I (Interface Segregation): TreeType expone todo su estado como un bloque;

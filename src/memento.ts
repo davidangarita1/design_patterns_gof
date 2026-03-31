@@ -145,7 +145,7 @@ history.getHistory().forEach((m) => console.log(m.getInfo()));
 // PRINCIPIOS SOLID EN ESTE PATRÓN
 // =============================================================================
 //
-// ✅  PRINCIPIOS QUE USA:
+// [CHECK] PRINCIPIOS QUE USA:
 //   - S (Single Responsibility): Document solo gestiona su contenido; DocumentHistory
 //     solo gestiona el historial de snapshots; DocumentMemento solo almacena estado.
 //     Cada clase tiene una única razón de cambio.
@@ -154,7 +154,7 @@ history.getHistory().forEach((m) => console.log(m.getInfo()));
 //   - L (Liskov Substitution): Los mementos son entidades de valor inmutables;
 //     cualquier snapshot puede ser restaurado de forma uniforme.
 //
-// ⚠️  PRINCIPIOS QUE VIOLA U OMITE:
+// [WARNING] PRINCIPIOS QUE VIOLA U OMITE:
 //   - D (Dependency Inversion): Document crea directamente instancias de
 //     DocumentMemento (clase concreta). Idealmente dependeria de una interfaz
 //     Memento para mayor flexibilidad.

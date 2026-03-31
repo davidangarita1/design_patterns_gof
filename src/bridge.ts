@@ -115,7 +115,7 @@ shape.draw();
 // PRINCIPIOS SOLID EN ESTE PATRÓN
 // =============================================================================
 //
-// ✅  PRINCIPIOS QUE USA:
+// [CHECK] PRINCIPIOS QUE USA:
 //   - O (Open/Closed): Abstracciones (Circle, Rectangle) e implementaciones
 //     (WindowsAPI, LinuxAPI) pueden extenderse independientemente sin modificar
 //     el otro lado del puente.
@@ -126,7 +126,7 @@ shape.draw();
 //   - L (Liskov Substitution): Cualquier DrawingAPI concreta puede sustituir a
 //     otra al implementar la misma interfaz sin romper las formas.
 //
-// ⚠️  PRINCIPIOS QUE VIOLA U OMITE:
+// [WARNING] PRINCIPIOS QUE VIOLA U OMITE:
 //   - I (Interface Segregation): Si DrawingAPI crece con métodos muy específicos
 //     (ej. drawArrow), implementaciones que no la soportan deben implementarla
 //     igual, violando ISP.

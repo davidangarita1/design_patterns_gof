@@ -25,7 +25,7 @@ class RealDatabaseConnection implements DatabaseConnection {
   }
 
   private connect(): string {
-    console.log("✓ Connected to database");
+    console.log("[OK] Connected to database");
     this.isConnected = true;
     return "Connected";
   }
@@ -59,7 +59,7 @@ class ProxyDatabaseConnection implements DatabaseConnection {
 
     // Control de acceso: prevenir ciertos comandos
     if (sql.toUpperCase().includes("DROP")) {
-      console.log("❌ DROP commands are not allowed!");
+      console.log("[ERROR] DROP commands are not allowed!");
       return "Access denied";
     }
 
@@ -103,7 +103,7 @@ databaseProxy.getAccessLog().forEach((log) => console.log(log));
 // PRINCIPIOS SOLID EN ESTE PATRÓN
 // =============================================================================
 //
-// ✅  PRINCIPIOS QUE USA:
+// [CHECK] PRINCIPIOS QUE USA:
 //   - O (Open/Closed): Se puede agregar nueva lógica al proxy (caché, auditoría)
 //     sin modificar RealDatabaseConnection.
 //   - D (Dependency Inversion): El cliente depende de la interfaz DatabaseConnection,
@@ -113,7 +113,7 @@ databaseProxy.getAccessLog().forEach((log) => console.log(log));
 //   - S (Single Responsibility): El proxy gestiona logging y control de acceso;
 //     la clase real solo gestiona la conexión. Responsabilidades separadas.
 //
-// ⚠️  PRINCIPIOS QUE VIOLA U OMITE:
+// [WARNING] PRINCIPIOS QUE VIOLA U OMITE:
 //   - I (Interface Segregation): Si DatabaseConnection crece con métodos como
 //     beginTransaction(), el proxy debe implementarlos todos aunque solo delege.
 //   - S (Single Responsibility): DatabaseProxy combina tres responabilidades:

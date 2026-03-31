@@ -148,7 +148,7 @@ stock.setPrice(75);
 // PRINCIPIOS SOLID EN ESTE PATRÓN
 // =============================================================================
 //
-// ✅  PRINCIPIOS QUE USA:
+// [CHECK] PRINCIPIOS QUE USA:
 //   - O (Open/Closed): Nuevos observadores (StockScreener, MobileAlert) se
 //     agregan sin modificar StockPrice ni los observadores existentes.
 //   - D (Dependency Inversion): StockPrice depende de la interfaz Observer,
@@ -158,7 +158,7 @@ stock.setPrice(75);
 //   - L (Liskov Substitution): Cualquier observador concreto puede sustituir
 //     a otro al implementar la misma interfaz Observer.
 //
-// ⚠️  PRINCIPIOS QUE VIOLA U OMITE:
+// [WARNING] PRINCIPIOS QUE VIOLA U OMITE:
 //   - I (Interface Segregation): Todos los observadores reciben el Subject
 //     completo en update(). Un TradingBot que solo necesita el precio debe
 //     hacer un cast (instanceof StockPrice), acoplando al tipo concreto.
